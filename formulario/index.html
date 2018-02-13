@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo Formulario</title>
+	<link rel="icon" type="image/jpg" href="imagenes/vegeta.jpg">
+</head>
+<body>
+	<form action="index.html">
+		Nombre: <input type="text" name="txt-nombre" id="txt-nombre" size="20" placeholder="Ejem. Juan" value="Juan"><br><br>
+		Apellido: <input type="text" name="txt-apellido" id="txt-apellido" size="10" placeholder="Ejem. Perez"><br><br>
+		Dirección: <textarea name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa">Este es el contenido</textarea><br><br>
+		Genero: 
+		<label><input type="radio" name="rbt-genero">Femenino</label> 
+		<label><input type="radio" name="rbt-genero">Masculino</label><br>
+		Gustos: 
+			<label><input name="chk-gustos[]" type="checkbox">Baleadas</label>
+			<label><input name="chk-gustos[]" type="checkbox">Pizza</label>
+			<label><input name="chk-gustos[]" type="checkbox">Tortillas con quesillo</label>
+			<label><input name="chk-gustos[]" type="checkbox">Sopa de mondongo</label>
+			<label><input name="chk-gustos[]" type="checkbox">Pan</label><br>
+		Pais: 
+		<select>
+			<option value="1">Honduras</option>
+			<option value="2">Guatemala</option>
+			<option value="3">Costarica</option>
+			<option value="4">Panama</option>
+			<option value="5">Nicaragua</option>
+			<option value="6">Belice</option>
+		</select><br>
+		Paises que he visitado: 
+		<select multiple>
+			<option value="1">Honduras</option>
+			<option value="2">Guatemala</option>
+			<option value="3">Costarica</option>
+			<option value="4">Panama</option>
+			<option value="5">Nicaragua</option>
+			<option value="6">Belice</option>
+		</select>
+
+		<br>
+		Contraseña: <input type="password"><br>
+		Fecha de nacimiento: <input type="date" placeholder="Ingrese una fecha"><br>
+		Email: <input type="email" name="">
+		<input type="submit" value="Boton tipo submit"><!-- funciona en conjunto con la etiqueta form -->
+		<input type="button" value="Boton tipo button"><!-- Funcionalidad personalizada con JS-->
+		<button type="submit">Boton tipo submit</button><!-- funciona en conjunto con la etiqueta form -->
+		<button type="button">Boton tipo button</button><!-- Funcionalidad personalizada con JS-->
+		<br>
+		<a href="http://google.hn" target="_blank">Ir a Google</a><br>
+		<a href="descargas/FormatoAsistencia.docx">Formato de asistencia</a>
+		<a href="descargas/PlanificacionProgramacionOrientadaObjetos-IS410_II-2017.pdf" download>Ver pdf</a><br>
+		<a href="paginas/pagina1.html">Ir a pagina 1</a><br>
+		<a href="http://localhost/poo/formulario/paginas/pagina2.html">Ir a pagina 2</a><br>
+		<img src="imagenes/goku.jpg">
+	</form>
+
+
+	<table border="1" cellspacing="0" cellpadding="10">
+		<thead>
+			<tr>
+				<th>Titulo 1</th>
+				<th>Titulo 2</th>
+				<th>Titulo 3</th>
+				<th>Titulo 4</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Celda 1</td>
+				<td>Celda 2</td>
+				<td>Celda 3</td>
+				<td>Celda 4</td>
+			</tr>
+			<tr>
+				<td>Celda 1</td>
+				<td>Celda 2</td>
+				<td>Celda 3</td>
+				<td>Celda 4</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+
+<!-- Tablas -->
+<!-- div y span -->
+<!-- etiquetas semanticas -->
