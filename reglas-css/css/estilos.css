@@ -1,0 +1,6 @@
+#parrafo-verde{ /*Se usa numeral para asignar estilos por ID*/
+	color:green;
+}
+.parrafo-rojo{/*Se usa punto para asignar estilos por el nombre de una clase css*/
+	color:red;
+}
