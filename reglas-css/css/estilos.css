@@ -4,3 +4,33 @@
 .parrafo-rojo{/*Se usa punto para asignar estilos por el nombre de una clase css*/
 	color:red;
 }
+
+#parrafo-verde, .parrafo-rojo, h1{
+	text-decoration: underline;
+}
+
+a{
+	color:purple;
+}
+
+a:hover{
+	color:white;
+	background-color: black;
+	text-decoration: none;
+}
+
+#parrafo-verde a{
+	color:orange;
+}
+
+#parrafo-verde:hover{
+	background-color:rgba(0,0,0,0.5);
+}
+
+.parrafo-con-borde{
+	border:1px solid #ff0000;
+}
+
+.parrafo-con-fondo{
+	background-color:blue;
+}
