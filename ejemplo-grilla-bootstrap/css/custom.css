@@ -1,0 +1,17 @@
+.video-miniatura{
+	padding: 2px;
+	background-color: #ececec;
+}
+
+.video-miniatura a{
+	color:#000;
+	font-weight: bold;
+}
+
+.descripcion{
+	margin:0 10px 0 10px;
+}
+
+.video-miniatura:hover{
+	background-color:#f3f3f3;
+}
