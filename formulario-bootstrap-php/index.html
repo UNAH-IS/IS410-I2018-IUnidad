@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	
+	<style type="text/css">
+		.btn-primary {
+		    background-color: #b400ff;
+		    border-color: #480963;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<form action="procesar.php" method="GET">
+		<table class="table table-striped table-hover" style="width: 700px">
+
+			<tr>
+				<td>Nombre:</td>
+				<td><input class="form-control" type="text" name="txt-nombre" id="txt-nombre" size="20" placeholder="Ejem. Juan" value="Juan"></td>
+			</tr>
+			<tr>
+				<td>Apellido:</td>
+				<td><input class="form-control"  type="text" name="txt-apellido" id="txt-apellido" size="10" placeholder="Ejem. Perez"></td>
+			</tr>
+			<tr>
+				<td>Dirección:</td>
+				<td> <textarea class="form-control"  name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa">Este es el contenido</textarea></td>
+			</tr>
+			<tr class="table-danger">
+				<td>Genero: </td>
+				<td>
+					<label><input type="radio" name="rbt-genero" value="F">Femenino</label> 
+					<label><input type="radio" name="rbt-genero" value="M">Masculino</label>
+				</td>
+			</tr>
+			<tr>
+				<td>Gustos:</td>
+				<td>
+					<label><input name="chk-gustos[]" value="1" type="checkbox">Baleadas</label>
+					<label><input name="chk-gustos[]" value="2" type="checkbox">Pizza</label>
+					<label><input name="chk-gustos[]" value="3" type="checkbox">Tortillas con quesillo</label>
+					<label><input name="chk-gustos[]" value="4" type="checkbox">Sopa de mondongo</label>
+					<label><input name="chk-gustos[]" value="5" type="checkbox">Pan</label>
+				</td>
+			</tr>
+			<tr>
+				<td>Pais: </td>
+				<td>
+					<select class="form-control" name="slc-pais">
+						<option value="1">Honduras</option>
+						<option value="2">Guatemala</option>
+						<option value="3">Costarica</option>
+						<option value="4">Panama</option>
+						<option value="5">Nicaragua</option>
+						<option value="6">Belice</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Paises que he visitado: </td>
+				<td>
+					<select multiple class="form-control" name="slc-paises-visita[]">
+						<option value="1">Honduras</option>
+						<option value="2">Guatemala</option>
+						<option value="3">Costarica</option>
+						<option value="4">Panama</option>
+						<option value="5">Nicaragua</option>
+						<option value="6">Belice</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Contraseña:</td>
+				<td><input class="form-control"  type="password" name="constrasena"></td>
+			</tr>
+			<tr>
+				<td>Fecha de nacimiento: </td>
+				<td><input class="form-control"  type="date" name="txt-fecha-nacimiento" placeholder="Ingrese una fecha"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td> <input class="form-control"  type="email" name="txt-email"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input class="btn btn-primary" type="submit" value="Enviar información" name="btn-enviar">
+				</td>
+			</tr>			
+		</table>
+	</form>
+</body>
+</html>
