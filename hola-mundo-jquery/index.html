@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.input-invalido{
+			border: 1px solid red;
+		}	
+	</style>
+</head>
+<body>
+	<input type="text" name="txt-usuario" id="txt-usuario" placeholder="Usuario">
+	<input type="password" name="txt-password" id="txt-password" placeholder="Usuario">
+	<button type="button" id="btn-login">Enviar</button>
+	<button type="button" onclick="asignarContrasena();">Asignar Contraseña</button>
+	<div id="contenido"></div>
+	<div id="contenido2" style="display:block;background-color:black; color:white;">Contenido que desaparecera</div>
+	<button type="button" id="btn-mostrar">Mostrar Contenido</button>
+	<button type="button" id="btn-ocultar">Ocultar Contenido</button>
+
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//Asignar un evento click con Jquery a traves del id del boton, se envia como parametro una funcion, en este
+		//caso se envia una funcion anonima
+		$("#btn-login").click(function(){
+			//JS Nativo:  document.getElementById("txt-usuario").value
+			//alert("JQuery: " + $("#txt-usuario").val());
+
+			//JS Nativo:  document.getElementById("contenido").innerHTML = document.getElementById("txt-usuario").value +", "+ document.getElementById("txt-password").value;
+			//Si se quiere anexar contenido html utilizar la function append() en vez de html()
+			$("#contenido").html("<h1>"+$("#txt-usuario").val() + "," + $("#txt-password").val()+"</h1>");
+			
+			//JS Nativo: document.getElementById("txt-usuario").classList.add("input-invalido");
+			$("#txt-usuario").addClass("input-invalido"); //Utilizar removeClass para quitar una clase css	
+		});
+
+		function asignarContrasena(){
+			$("#txt-password").val("asd.456");
+		}
+
+		$("#btn-mostrar").click(function(){
+			//$("#contenido2").css("display","block");
+			$("#contenido2").fadeIn(2000);
+		});
+
+		$("#btn-ocultar").click(function(){
+			//$("#contenido2").css("display","none");
+			$("#contenido2").fadeOut(2000);
+		});
+	</script>
+</body>
+</html>
+
+<!--
+	//Para acceder por el nombre de una clase:
+	$(".nombre-clase")
+	//Por el tipo de una etiqueta:$("etiqueta")
+	$("input")
+	//Acceder por una propiedad/atributo especifico
+	$("etiqueta[propiedad='valor']")
+	$("input[name='txt-usuario']")
+-->
