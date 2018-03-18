@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <title>Jumbotron Template for Bootstrap</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#"><img src="img/facebook-text.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <!--ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul-->
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input class="form-control mr-sm-2" type="text" placeholder="User" aria-label="User">
+          <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+          <button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-block">
+                <h1 class="titulo-mapa">Facebook helps you connect and share with the people in your life.</h1>
+                <img src="img/mapa.png" class="img-fluid">
+              </div>
+              <div id="div-form" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <h1>Abre una cuenta</h1>
+                <p>Es gratis y lo será siempre.</p>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <input type="text" name="txt-nombre" id="txt-nombre" value="Juan" class="form-control" placeholder="Nombre">
+                      <div class="invalid-feedback">Campo obligatorio</div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <input type="text" name="txt-apellido" id="txt-apellido" value="Perez" class="form-control" placeholder="Apellido">
+                      <div class="invalid-feedback">Campo obligatorio</div>
+                  </div>
+                  <div class="col-xl-12">
+                    <input type="text" class="form-control" name="txt-correo" id="txt-correo" value="jperez@gmail.com" placeholder="Número de celular o correo electrónico" onkeydown="validarEmail(this);">
+                    <div class="invalid-feedback">Campo obligatorio</div>
+                  </div>
+                  <div class="col-xl-12">
+                    <input type="password" id="txt-password" value="asd.456" class="form-control" placeholder="Contraseña" onkeydown="validarContrasena(this);">
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Debe tener más de 6 caracteres</div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                      <select id="slc-dia" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                      </select>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                      <select id="slc-mes" class="form-control">
+                        <option value="1">Enero</option>
+                        <option value="2" selected>Febrero</option>
+                        <option value="3">Marzo</option>
+                      </select>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                      <select id="slc-anio" class="form-control">
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017" selected>2017</option>
+                      </select>
+                  </div>
+                  <div class="col-3">
+                    <input type="radio" name="rbt-genero" id="rbt-femenino" value="F"><label for="rbt-femenino">&nbsp;Femenino</label>
+                  </div>
+                  <div class="col-3">
+                    <input type="radio" name="rbt-genero" id="rbt-masculino" value="M" checked><label for="rbt-masculino">&nbsp;Masculino</label>
+                  </div>
+                  <div class="col-xl-12">
+                    <p class="mensaje-pequenio">By clicking Create an account, you agree to our Terms and confirm that you have read our Data Policy, including our Cookie Use Policy. You may receive SMS message notifications from Facebook and can opt out at any time.</p>
+                    <button type="button" class="btn btn-success" id="btn-login" data-loading-text="Cargando">Create an account</button>
+                    <div id="respuesta"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="div-post-login" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" style="display:none">
+                  <img src="img/post-create-user.png" >
+                  <h1>Thanks!</h1>
+                  <p>Test your login</p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Facebook 2017-2018</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/controlador.js"></script>
+  </body>
+</html>

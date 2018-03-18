@@ -1,0 +1,40 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+
+.bg-dark {
+    background-color: #3B5998!important;
+}
+
+.btn-primary {
+    background-color: #2e477b;
+    border-color: #2e477b;
+}
+
+
+.btn-primary:hover {
+    background-color: #172542;
+    border-color: #172542;
+}
+
+.jumbotron{
+	background-color: #E5E8F1;
+}
+
+.form-control{
+	font-size: 18px;
+	margin:3px 0 3px 0;
+}
+
+.mensaje-pequenio{
+	color: #777;
+    font-size: 11px;
+}
+
+.titulo-mapa{
+	color: #0e385f;
+    font-size: 20px;
+    font-weight: bold;
+}
