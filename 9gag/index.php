@@ -61,7 +61,7 @@
           <p>
             <div class="container-fluid">
               <div class="row" id="div-memes">
-                <!--
+                
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
                   <div class="well">
                     <strong>Usuario 1</strong>
@@ -83,7 +83,7 @@
                     </p>
                   </div>
                 </div>
-
+<!--
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
                   <div class="well">
                     <strong>Usuario 2</strong>
@@ -143,10 +143,7 @@
               <tr>
                   <td>
                     <br>Usuario que registra el meme:<br>
-                    <label>Goku<input id="rbt-goku" type="radio" value="Goku" name="rbt-foto"><img src="img/goku.jpg" class="img-responsive img-circle"></label>
-                    <label>Gohan<input id="rbt-gohan" type="radio" value="Gohan" name="rbt-foto"><img src="img/gohan.jpg" class="img-responsive img-circle"></label>
-                    <label>Trunks<input id="rbt-trunks" type="radio" value="Trunks" name="rbt-foto"><img src="img/trunks.jpg" class="img-responsive img-circle"></label>
-                    <label>Vegeta<input id="rbt-vegeta" type="radio" value="Vegeta" name="rbt-foto"><img src="img/vegeta.jpg" class="img-responsive img-circle"></label>
+                    <div id="div-usuarios"></div>
                   </td>
                 </tr>
                 <tr>
