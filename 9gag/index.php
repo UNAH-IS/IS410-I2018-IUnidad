@@ -60,29 +60,8 @@
           <h2>Memes Registrados</h2>
           <p>
             <div class="container-fluid">
-              <div class="row" id="div-memes">
+              <div class="row" id="div-memes">                
                 
-                <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
-                  <div class="well">
-                    <strong>Usuario 1</strong>
-                    <p>Esta es la descripción del meme.</p>
-                    <img src="img/memes/meme_01.jpg" class="img-responsive">
-                    <span class="badge">Puntos: 12345</span>
-                    <span class="badge">Comentarios: 2</span>
-                    <p>
-                      <hr>
-                      <h4>Comentarios:</h4>
-                      <div>
-                        <b>Usuario x</b>
-                        <p class="commentario">Este es el comentario</p>  
-                      </div>
-                      <div>
-                        <b>Usuario x</b>
-                        <p  class="commentario">Este es el comentario</p>  
-                      </div>
-                    </p>
-                  </div>
-                </div>
 <!--
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
                   <div class="well">
@@ -138,6 +117,9 @@
           <form method="GET" action="procesar.php">
             <table>
               <tr>
+                <td>Código: <input type="text" id="txt-codigo" class="form-control"></td>
+              </tr>
+              <tr>
                 <td>Descripcion Meme: <input id="txt-descripcion" name="txt-descripcion" type="text" class="form-control"></td>
               </tr>
               <tr>
@@ -148,8 +130,8 @@
                 </tr>
                 <tr>
                   <td>
-                    Puntuación:
-                    <input id="txt-puntuacion" name="txt-puntuacion" type="text" class="form-control">
+                    Calificiación:
+                    <input id="txt-calificacion" name="txt-calificacion" type="text" class="form-control">
                   </td>
                 </tr>
                 <tr>
@@ -168,16 +150,6 @@
                       <option value="img/memes/meme_09.jpg">Meme 9</option>
                       <option value="img/memes/meme_10.jpg">Meme 10</option>
                     </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <br>Comentarios:
-                    <input id="txt-usuario1" type="text" name="txt-usuario1" class="form-control" placeholder="Usuario 1"><input type="text" id="txt-comentario1" name="txt-comentario1" placeholder="Comentario 1" class="form-control"><br>
-                    <input id="txt-usuario2" type="text" name="txt-usuario2" class="form-control" placeholder="Usuario 2"><input type="text" id="txt-comentario2" name="txt-comentario2" placeholder="Comentario 2" class="form-control"><br>
-                    <input id="txt-usuario3" type="text" name="txt-usuario3" class="form-control" placeholder="Usuario 3"><input type="text" id="txt-comentario3" name="txt-comentario3" placeholder="Comentario 3" class="form-control"><br>
-                    <input id="txt-usuario4" type="text" name="txt-usuario4" class="form-control" placeholder="Usuario 4"><input type="text" id="txt-comentario4" name="txt-comentario4" placeholder="Comentario 4" class="form-control"><br>
-                    <input id="txt-usuario5" type="text" name="txt-usuario5" class="form-control" placeholder="Usuario 5"><input type="text" id="txt-comentario5" name="txt-comentario5" placeholder="Comentario 5" class="form-control"><br>
                   </td>
                 </tr>
                 <tr>
