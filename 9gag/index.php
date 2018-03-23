@@ -155,8 +155,6 @@
                 <tr>
                   <td>
                     <br><br>
-                    <!--Este boton enviara la informacion de forma sincrona, recargara la página completamente-->
-                    <input type="submit" name="btn-registrar" value="Guardar Meme" class="btn btn-primary">
                     <input type="button" name="btn-registrar-ajax" value="Guardar Meme" class="btn btn-primary" onclick="guardarRegistro();">
                     <div id="div-respuesta"></div>
                   </td>

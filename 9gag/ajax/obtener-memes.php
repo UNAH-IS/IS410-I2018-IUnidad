@@ -15,7 +15,21 @@
 
 		echo '    <span class="badge">Comentarios: 0</span>';
 		echo '    <p>';
-		echo '		<textarea class="form-control" placeholder="Comentario" id="txt-comentario-meme-'.$partes[0].'"></textarea>';
+		echo '	  <hr><h4>Comentarios:</h4><div id="div-comentarios-'.$partes[0]. '">';
+
+		//Leer archivo de comentarios.
+		if (file_exists("../data/comentarios/comentarios-meme-".$partes[0].".csv")){
+			$archivoComentarios = fopen("../data/comentarios/comentarios-meme-".$partes[0].".csv", "r");		
+			while(($lineaComentario = fgets($archivoComentarios))){
+				$partesComentario = explode(",",$lineaComentario);
+				echo '<div><strong>'.$partesComentario[0].'</strong><p class="commentario">'.$partesComentario[1].'</p></div>';
+			}
+			fclose($archivoComentarios);
+		}else{
+			echo "<strong>No hay comentarios para este meme</strong>";
+		}
+
+		echo '		</div><textarea class="form-control" placeholder="Comentario" id="txt-comentario-meme-'.$partes[0].'"></textarea>';
 		echo '		<button type="button" class="btn btn-default" onclick="comentar('.$partes[0].');">Publicar comentario</button>';
 		echo '    </p>';
 		echo '  </div>';
