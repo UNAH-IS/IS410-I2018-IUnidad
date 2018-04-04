@@ -56,3 +56,28 @@ function cargarMemes(){
 		}
 	});
 }
+
+function editarMeme(codigoMeme){
+	$.ajax({
+		url:"ajax/editar-meme.php",
+		data:"codigo-meme="+codigoMeme,
+		method: "POST",
+		dataType:"json",
+		success:function(respuesta){
+			$("#txt-codigo").val(respuesta.codigoMeme);
+			$("#txt-descripcion").val(respuesta.descripcion);
+			$("#txt-calificacion").val(respuesta.calificacion);
+			$("#slc-imagen").val(respuesta.urlImagen);
+			$("input[name=rbt-usuario][value=" + respuesta.usuario + "]").attr('checked', 'checked');
+
+			$("#btn-actualizar").show();
+			$("#btn-cancelar").show();
+			$("#btn-guardar").hide();
+			console.log(respuesta);
+		},
+		error:function(error){
+			console.log(error);
+		}
+	});
+
+}

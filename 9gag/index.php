@@ -155,12 +155,15 @@
                 <tr>
                   <td>
                     <br><br>
-                    <input type="button" name="btn-registrar-ajax" value="Guardar Meme" class="btn btn-primary" onclick="guardarRegistro();">
+                    <input id="btn-guardar" type="button" value="Guardar Meme" class="btn btn-primary" onclick="guardarRegistro();">
+                    <input id="btn-actualizar" type="button" style="display: none;" value="Actualizar" class="btn btn-success" onclick="">
+                    <input id="btn-cancelar" type="button" style="display: none;" value="Cancelar" class="btn btn-danger" onclick="">
                     <div id="div-respuesta"></div>
                   </td>
                 </tr>
               </table>            
           </form>
+          <div id= "div-registro-seleccionado"></div>
         </div>
       </div>
 

@@ -6,6 +6,7 @@
 		echo '  <div class="well">';
 		echo '    <strong>'.$partes['2'].'</strong>';
 		echo '    <p>'.$partes[1].'</p>';
+		echo '	<button type="button" onclick="editarMeme('.$partes[0].');" class="btn btn-primary">Editar</button>';
 		echo '    <img src="'.$partes[4].'" class="img-responsive">';
 		echo '    <span class="badge">Calificación: ';
 		for ($i=0; $i<intval($partes[3]);$i++)
