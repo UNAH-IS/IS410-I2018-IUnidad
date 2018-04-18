@@ -1,0 +1,77 @@
+Clase
+Una clase es un tipo de dato estructurado que es una coleccion de elementos conocidos como atributos y metodos. Los atributos hacen referencia a cualidades o caracteristicas de un elemento y los metodos hacen referencia a acciones (verbos) de un elemento.
+Se puede crear una clase a partir de cualquier elemento ya sea real o abstracto.
+
+Constructor:
+Metodo que usualmente se utiliza para inicializar los atributos internos de la clase.
+El primer metodo en ejecutarse al crear una instancia.
+Para definir un costructor el nombre del metodo debe ser __construct
+En PHP no se puede sobrecargar un metodo, por lo tanto no se puede sobrecargar un constructor.
+
+Pilares de la programacion orientada a objetos
+
+1. Encapsulación: Consiste en proteger los atributos internos de una clase para evitar modificaciones directas o erroneas. Para aplicar encapsulacion se definen los atributos como privados y se crean dos metodos para cada atributo, uno para acceder al valor del atributo (get) y otro para asignar el valor del atributo (set).
+
+2. Herencia: Funcionalidad que permite la reutilizacion de codigo, identificando de un conjunto de clases los atributos en comun y creando una nueva clase la cual es llamada clase padre, las clases restantes heredaran los atributos y metodos de la clase padre y se les llamara clases hijas.
+	En PHP no existe la herencia multiple. Para aplicar herencia se utiliza extends.
+
+	Atributos estaticos (static): Es un modificador que permite acceder a un atributo sin crear una instancia, ademas es un valor compartido por todos los objetos del mismo tipo. Es posible aplicar static a un metodo, en ese caso se podria acceder al metodo sin crear una instancia, ademas, desde dicho metodo solo se podria acceder a atributos estaticos. 
+
+	*Clases Abstractas: Tambien llamadas clases resumen, son clases especiales con las siguientes caracteristicas:
+	-No se pueden instanciar
+	-Se puede ubicar el modificador abstract a clases y metodos. En caso de una clase abstracta esta puede no tener metodos abstracto pero si existe al menos un metodo abstracto la clase debe ser abstracta.
+	Los metodos abstractos no tienen cuerpo y se deben sobreescribir obligatoriamente en las clases hijas.
+
+	*Interfaces: Técnica que permite simular la herencia multiple. Son estructuras de datos similares a las clases pero que cumplen con las siguientes reglas:
+	-Se declara con la palabra reservada interface en vez de class
+	Para aplicar herencia utilizando una interfaz como padre se utiliza implements en vez de extends.
+	-No se puede instanciar una interfaz
+	-No tiene constructor
+	-Todos sus metodos son abstractos
+	-Todos sus atributos son publicos y constantes estaticas (Java).
+
+Abstracción: Funcionalidad que permite a terceros abstraerse o desentenderse de la funcionalidad interna de una clase y simplemente se hace uso de ella.
+
+Polimorfismo(Muchas formas): 
+	Formas de polimorfismo:
+		*Sobrecarga de metodos (No lo soporta php)
+		*Sobreescritura de metodos
+		*Compatibilidad de clases (En caso de lenguajes de tipos fuertes)
+
+
+
+
+Bases de datos
+Conjunto de información relacionada bajo un mismo contexto.
+
+Sistemas Gestores de bases de datos (DBMS)
+Relacionales
+	Oracle
+	MysqL
+	Postgresql
+	SqlServer
+
+En Red
+Jerarquico
+No relacionales o orientados a documentos
+	MongoDB
+	MariaDB
+	Casandra...
+
+
+Orientado a objetos
+
+
+
+
+IDEs o herramientas para trabajar con Mysql
+	MysqL Workbench
+	PHPMyadmin
+	Datagrip
+	Mysql Administrator
+	....
+
+
+
+Llave Primaria:
+Campo o conjunto de campos que identifican de forma unica un registro.

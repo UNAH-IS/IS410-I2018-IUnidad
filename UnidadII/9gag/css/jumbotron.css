@@ -1,0 +1,36 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.jumbotron{
+	background-color: #0B0B0B;
+	color: #fff;
+}
+
+.navbar-inverse {
+    background-color: #0B0B0B;
+    border-color: #0B0B0B;
+}
+
+
+.formulario td{
+	padding:6px;
+}
+
+.btn-primary{
+	background-color: #0B0B0B;
+	border-color: #0B0B0B;
+}
+
+
+.commentario{
+	color: #a3a3a3;
+}
+
+.texto-opaco{
+	color:#7f7f7f;
+	font-size: 12px;
+	margin-top: 20px;
+}
