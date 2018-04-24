@@ -1,0 +1,128 @@
+IDEs:
+MySQL Workbench
+PHPMyaDMIn (Wamp/xamp)
+DataGrip
+...
+.
+
+
+Cardinalidad o relaciones:
+1:N (de uno a muchos)
+N:1 (de muchos a uno)
+N:M (de muchos a muchos)
+1:1 (de uno a uno)
+
+
+Insertar
+Actualizar
+Eliminar
+Consultar
+
+
+CreateReadUpdateDelete
+
+
+Structured Query Language
+	*Data Definition Language DDL
+		Crear/Modificar/Eliminar estructuras de datos en el gestor. 
+		Ejemplo: Tablas, indice,vistas, procedimientos
+	*Data Manipulation Language DML
+		Insertar/Actualizar/Eliminar informacion
+
+		***Insertar un registro:
+		INSERT INTO nombre_tabla(campo1, campo2, ..., campoN)
+		VALUES (valor1, valor2, ..., valorN);
+
+		INSERT INTO tbl_generos (codigo_genero, genero) 
+		VALUES (NULL, 'Femenino');
+
+		INSERT INTO tbl_generos (codigo_genero, genero) 
+		VALUES (NULL, 'Masculino');
+
+		***Actualizar un registro:
+		UPDATE nombre_tabla
+		SET campo1 = nuevo_valor_1,
+			campo2 = nuevo_valor_2,
+			...,
+			campoN = nuevo_valor_N
+		WHERE campo_llave_primaria = valor_llave_primaria; 
+
+		UPDATE tbl_empleados 
+		SET nombre = 'ElBrayan' 
+		WHERE codigo_empleado = 7;
+
+		***Eliminar un registro:
+		DELETE FROM nombre_tabla
+		WHERE codigo_llave_primaria = valor_llave_primaria;
+
+		DELETE FROM tbl_empleados 
+		WHERE codigo_empleado = 7;
+
+	*Query Language QL
+		Consultar informacion:
+		SELECT campo1, campo2, ..., campoN
+		FROM nombre_tabla
+		WHERE CONDICIONES;
+
+		SELECT 	codigo_empleado, codigo_genero,
+				nombre, apellido, edad 
+		FROM tbl_empleados;
+
+		SELECT nombre
+		FROM tbl_empleados;
+
+		SELECT *
+		FROM tbl_empleados;
+
+		select *
+		from tbl_empleados
+		WHERE codigo_genero = 1
+		AND edad <=50;
+
+		select *
+		FROM tbl_empleados
+		WHERE edad >=40
+		AND edad <=50;
+
+		select *
+		from tbl_empleados
+		WHERE edad BETWEEN 40 and 50;
+
+		/*Empleados que el apellido no termine con z*/
+
+		select *
+		from tbl_empleados
+		where apellido not like '%z';
+
+
+
+		select  a.nombre,
+		        a.apellido,
+		        a.edad,
+		        b.genero
+		from tbl_empleados a
+		inner join tbl_generos b
+		on (a.codigo_genero = b.codigo_genero);
+
+
+		select *
+		from tbl_alumnos;
+
+		select *
+		from tbl_centros_estudios;
+
+		select *
+		from tbl_carreras;
+
+
+
+
+		SELECT a.codigo_alumno, a.cuenta, a.nombre, a.apellido, a.edad, a.indice,
+		      b.nombre_centro, c.nombre_carrera, d.genero
+		from tbl_alumnos a
+		inner join tbl_centros_estudios b
+		on (a.codigo_centro = b.codigo_centro)
+		inner join tbl_carreras c
+		on (a.codigo_carrera = c.codigo_carrera)
+		inner join tbl_generos d
+		on (a.codigo_genero = d.codigo_genero);
