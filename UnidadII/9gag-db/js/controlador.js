@@ -26,10 +26,12 @@ function guardarRegistro(){
 					"imagen="+$("#slc-imagen").val();
 	console.log(parametros);
 	$.ajax({
-		url:"ajax/guardar-registro.php",
+		url:"ajax/api.php?accion=guardar-registro",
 		method:"POST",
 		data:parametros,
+		dataType:"json",
 		success:function(respuesta){
+			console.log(respuesta);
 			$("#div-memes").append(respuesta);
 		}
 	});
@@ -38,7 +40,7 @@ function guardarRegistro(){
 $(document).ready(function(){
 	//Esta funcion se ejecutar cuando todo el DOM se haya cargado
 	$.ajax({
-		url:"ajax/obtener-usuarios.php",
+		url:"ajax/api.php?accion=obtener-usuarios",
 		dataType:'json',
 		success:function(respuesta){
 			console.log(respuesta);
@@ -55,9 +57,38 @@ $(document).ready(function(){
 
 function cargarMemes(){
 	$.ajax({
-		url:"ajax/obtener-memes.php",
+		url:"ajax/api.php?accion=obtener-memes",
+		dataType: "json",
 		success:function(respuesta){
-			$("#div-memes").html(respuesta);
+			console.log(respuesta);
+			var contenido = "";
+			////////////////////////////////////////////
+			for (var i = 0; i<respuesta.length; i++){
+				contenido += 	' <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">'+
+								'  <div class="well">'+
+								'    <strong>'+ respuesta[i].nombre +'</strong>'+
+								'    <p>'+respuesta[i].descripcion+'</p>'+
+								'	<button type="button" onclick="editarMeme('+respuesta[i].codigo_meme+');" class="btn btn-primary">Editar</button>'+
+								'    <img src="'+respuesta[i].url_imagen+'" class="img-responsive">'+
+								'    <span class="badge">Calificación: ';
+				
+				for (var j=0; j<respuesta[i].calificacion;j++)
+					contenido += '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+		
+				contenido += 	'</span><span class="badge">Comentarios: 0</span><p>'+
+								'	  <hr><h4>Comentarios:</h4><div id="div-comentarios-'+respuesta[i].codigo_meme+ '">';
+		
+				
+				for(var k=0; k<respuesta[i].comentarios.length; k++ )
+					contenido += '<div><strong>'+respuesta[i].comentarios[k].nombre+'</strong><p class="commentario">'+respuesta[i].comentarios[k].descripcion+'</p></div>';
+
+				contenido += 	'</div><textarea class="form-control" placeholder="Comentario" id="txt-comentario-meme-'+respuesta[i].codigo_meme+'"></textarea>'+
+								'<button type="button" class="btn btn-default" onclick="comentar('+respuesta[i].codigo_meme+');">Publicar comentario</button>'+
+								'</p></div></div>';
+			}
+			///////////////////////////////////////////////
+
+			$("#div-memes").html(contenido);
 		}
 	});
 }

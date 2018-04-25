@@ -46,6 +46,6 @@
 				" Usuario: " . $this->usuario;
 		}
 
-		public abstract function guardarPost();
+		public abstract function guardarPost($conexion);
 	}
 ?>

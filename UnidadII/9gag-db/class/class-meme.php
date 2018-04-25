@@ -49,16 +49,39 @@
 		}
 
 		//Metodo sobreescrito a partir de la clase POST
-		public function guardarPost(){
-			$archivo = fopen("../data/memes.csv", "a+");
-			fwrite( $archivo, 
-					$this->codigoPost.",".
-					$this->descripcion.",".
-					$this->usuario.",".
-					$this->calificacion.",".
-					$this->urlImagen."\n"
-			);
-			fclose($archivo);
+		public function guardarPost($conexion){
+			$sql = 	sprintf("INSERT INTO tb_memes(descripcion, fecha_publicacion, ".
+					"calificacion, url_imagen, codigo_usuario) ".
+					"VALUES ('%s',STR_TO_DATE('%s','%s'),%s,'%s',%s)",
+					$conexion->antiInyeccion($this->descripcion),
+					$conexion->antiInyeccion($this->fecha),
+					'%d/%m/%Y',
+					$conexion->antiInyeccion($this->calificacion),
+					$conexion->antiInyeccion($this->urlImagen),
+					$conexion->antiInyeccion($this->usuario) //Se asume que es el código del usuario y no un objeto del tipo usuario.
+				);
+			
+			$resultado = $conexion->ejecutarConsulta($sql);
+			if ($resultado){
+				//Se agrego con exito
+				$sql = 	sprintf("SELECT codigo_meme, descripcion, fecha_publicacion, ".
+						"calificacion, url_imagen, codigo_usuario ".
+						"FROM tb_memes ".
+						"WHERE codigo_meme = %s",
+						$conexion->ultimoId()
+					);
+				$resultadoMeme = $conexion->ejecutarConsulta($sql);
+				$fila = $conexion->obtenerFila($resultadoMeme);
+				$fila["codigo_resultado"] = 0;
+				$fila["mensaje_resultado"] = "Registro insertado con éxito";
+				echo json_encode($fila);
+			}else{
+				//Fallo
+				$respuesta["codigo_resultado"] = 1;
+				$respuesta["mensaje_resultado"] = "No se pudo guardar el registro";
+				$respuesta["sql"] = $sql;
+				echo json_encode($respuesta);
+			}
 		}
 
 		public function imprimirMeme(){
