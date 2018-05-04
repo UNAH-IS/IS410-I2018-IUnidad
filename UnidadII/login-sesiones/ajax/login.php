@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     include("../class/class-conexion.php");
     $conexion = new Conexion();
     $sql = sprintf( 
@@ -17,13 +17,12 @@
         $respuesta = $conexion->obtenerFila($resultado);
         $respuesta["codigoResultado"] = 0;
         $respuesta["mensajeResultado"] = "El usuario si existe";
-        setcookie("usr",$respuesta["correo"],time() + (86400 * 30),"/");
-        setcookie("psw",$respuesta["contrasena"],time() + (86400 * 30),"/");
+        $_SESSION["usr"] = $respuesta["correo"];
+        $_SESSION["psw"] = $respuesta["contrasena"];
     }else {
         $respuesta["codigoResultado"] = 1;
         $respuesta["mensajeResultado"] = "El usuario no existe";
-        setcookie("usr","");
-        setcookie("psw","");
+        session_destroy();
     }
     echo json_encode($respuesta);
 

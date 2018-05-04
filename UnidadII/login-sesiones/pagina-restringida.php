@@ -1,5 +1,6 @@
 <?php 
-    if (!isset($_COOKIE["usr"]) || !isset($_COOKIE["psw"]))
+    session_start();
+    if (!isset($_SESSION["usr"]) || !isset($_SESSION["psw"]))
         header("Location: index.html");
 
     include("class/class-conexion.php");
@@ -8,8 +9,8 @@
         "SELECT codigo_usuario, codigo_tipo_usuario, ". 
             "correo, nombre, contrasena FROM tbl_usuarios ".
         "WHERE correo = '%s' and contrasena = '%s'",
-        $_COOKIE["usr"],
-        $_COOKIE["psw"]
+        $_SESSION["usr"],
+        $_SESSION["psw"]
     );
     //echo $sql;
     //exit;
@@ -31,5 +32,6 @@
 </head>
 <body>
     <h1>Bienvenido a pagina restringida</h1>
+    <a href = "logout.php">Cerrar Sesion</h1>
 </body>
 </html>
