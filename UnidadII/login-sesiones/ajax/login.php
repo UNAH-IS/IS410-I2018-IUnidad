@@ -4,7 +4,7 @@
     $conexion = new Conexion();
     $sql = sprintf( 
         "SELECT codigo_usuario, codigo_tipo_usuario, ". 
-            "correo, nombre, contrasena FROM tbl_usuarios ".
+            "correo, nombre FROM tbl_usuarios ".
         "WHERE correo = '%s' and contrasena = sha1('%s')",
         $_POST["usuario"],
         $_POST["password"]
@@ -18,7 +18,7 @@
         $respuesta["codigoResultado"] = 0;
         $respuesta["mensajeResultado"] = "El usuario si existe";
         $_SESSION["usr"] = $respuesta["correo"];
-        $_SESSION["psw"] = $respuesta["contrasena"];
+        $_SESSION["psw"] = sha1($_POST["password"]);
     }else {
         $respuesta["codigoResultado"] = 1;
         $respuesta["mensajeResultado"] = "El usuario no existe";

@@ -8,7 +8,7 @@
      $sql = sprintf( 
         "SELECT codigo_usuario, codigo_tipo_usuario, ". 
             "correo, nombre, contrasena FROM tbl_usuarios ".
-        "WHERE correo = '%s' and contrasena = '%s'",
+        "WHERE correo = '%s' and contrasena = '%s' and codigo_tipo_usuario = 2",
         $_SESSION["usr"],
         $_SESSION["psw"]
     );
@@ -19,6 +19,8 @@
     if ($conexion->cantidadRegistros($resultado)<=0){
            header("Location: index.html");
     }
+
+    $registro = $conexion->obtenerFila($resultado);
 
 ?>
 
@@ -31,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Bienvenido a pagina restringida</h1>
+    <h1>Bienvenido <?php echo $registro["nombre"]; ?> todo poderoso</h1>
     <a href = "logout.php">Cerrar Sesion</h1>
 </body>
 </html>

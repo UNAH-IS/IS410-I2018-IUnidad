@@ -8,8 +8,10 @@ $("#btn-login").click(function(){
         dataType:"json",
         success:function(respuesta){
             console.log(respuesta);
-            if (respuesta.codigoResultado==0)
-                window.location.href = "pagina-restringida.php";//console.log("Usuario autorizado");
+            if (respuesta.codigoResultado==0 && respuesta.codigo_tipo_usuario == 1)
+                window.location.href = "pagina-cajero.php";//console.log("Usuario autorizado");
+            else if (respuesta.codigoResultado==0 && respuesta.codigo_tipo_usuario == 2)
+                window.location.href = "pagina-administrador.php";//console.log("Usuario autorizado");
         }
     });
 });
